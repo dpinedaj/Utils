@@ -1,0 +1,7 @@
+version: "3"
+services:
+  spark:
+    image: "bigdatateam/all-spark-with-data"
+    container_name: "spark"
+    ports:
+      - "8888:8888"

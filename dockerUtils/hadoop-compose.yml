@@ -1,0 +1,7 @@
+version: "3"
+services:
+  hadoop:
+    image: "bigdatateam/hdfs-notebook"
+    container_name: "hadoop"
+    ports:
+      - "8888:8888"
