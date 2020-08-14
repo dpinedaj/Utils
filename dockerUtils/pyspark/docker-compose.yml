@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+    spark-runtime:
+        build: .
+        image: pyspark
+        volumes:
+            - ./data:/data
+        ports:
+            - 4040:4040
+        entrypoint:
+            - bash
