@@ -19,7 +19,9 @@ RUN ln -s /bin/pip3 /bin/pip
 RUN \
     pip install --upgrade pip && \
     pip install numpy && \
-    pip install pyspark
+    pip install pyspark && \
+    pip install pyspark-stubs && \
+    pip install pylint
 
 #RUN rm /bin/python
 RUN ln -s /bin/python3 /bin/python
