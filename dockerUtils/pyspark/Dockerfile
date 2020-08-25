@@ -21,9 +21,12 @@ RUN \
     pip install numpy && \
     pip install pyspark && \
     pip install pyspark-stubs && \
-    pip install pylint
+    pip install pylint && \
+    pip install ipykernel && \
+    pip install autopep8 && \
+    pip install kafka-utils && \
+    pip install kafka-python
 
-#RUN rm /bin/python
 RUN ln -s /bin/python3 /bin/python
 
 # Define working directory
