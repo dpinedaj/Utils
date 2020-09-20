@@ -33,5 +33,4 @@ RUN ln -s /bin/python3 /bin/python
 WORKDIR /data
 
 # Define default command
-CMD ["bash"]
-#ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]

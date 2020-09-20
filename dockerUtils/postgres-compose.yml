@@ -1,7 +1,7 @@
 version: "3"
 services:
   postgres:
-    image: "postgres:9.6"
+    image: "postgres"
     container_name: "postgres"
     environment:
       - POSTGRES_USER=admin
@@ -11,3 +11,15 @@ services:
       - "5432:5432"
     #volumes:
     #  - ./postgres:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: 'pgadmin'
+    #restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@mail.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "8084:80"
+    depends_on:
+      - postgres
