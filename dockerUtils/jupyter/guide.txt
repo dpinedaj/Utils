@@ -1,0 +1,2 @@
+docker build -t jupyterlab -f jupyter.Dockerfile .
+docker run -p 8888:8888 jupyterlab
