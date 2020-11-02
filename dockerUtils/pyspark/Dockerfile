@@ -18,6 +18,7 @@ RUN ln -s /bin/pip3 /bin/pip
 # Install PySpark and Numpy
 RUN \
     pip install --upgrade pip && \
+    pip install jupyterlab && \
     pip install numpy && \
     pip install pyspark && \
     pip install pyspark-stubs && \
