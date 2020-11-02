@@ -3,9 +3,10 @@ services:
     spark-runtime:
         build: .
         image: pyspark
+        container_name: pyspark-daniel
         volumes:
-            - ./data:/data
+            - .:/data
         ports:
             - 4040:4040
-        entrypoint:
-            - bash
+            - 20000:20000
+        command: /bin/sh -c "jupyter lab --ip='0.0.0.0' --port=20000 --NotebookApp.token='' --no-browser --allow-root"
