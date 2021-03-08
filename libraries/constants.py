@@ -32,7 +32,7 @@ class Constants:
     @property
     def FAIL(self):
 
-        return self.__FALLO
+        return self.__FAIL
 
     @property
     def GLOBALCONFIG(self):
