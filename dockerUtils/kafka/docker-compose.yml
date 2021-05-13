@@ -18,11 +18,26 @@ services:
         #  - /var/run/docker.sock:/var/run/docker.sock
     spark-runtime:
         build: .
-        image: pyspark
-        container_name: pyspark
+        image: pyspark-kafka
+        container_name: pyspark-kafka
         links:
             - kafka:kafka
+            - mongodb:mongodb
         volumes:
             - ./data:/data
         ports:
             - 4040:4040
+    mongodb:
+        image: mongo
+        container_name: mongodb
+        hostname: mongodb
+        #volumes:
+        #  - ./mongodb/data/db/:/data/db
+        #env_file:
+        #  - mongodb/mongo.env
+        environment:
+        - MONGO_INITDB_ROOT_USERNAME=admin
+        - MONGO_INITDB_ROOT_PASSWORD=admin
+
+        ports:
+        - '27017-27019:27017-27019'

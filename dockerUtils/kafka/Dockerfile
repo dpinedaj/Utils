@@ -19,13 +19,14 @@ RUN ln -s /bin/pip3 /bin/pip
 RUN \
     pip install --upgrade pip && \
     pip install numpy && \
-    pip install pyspark && \
-    pip install pyspark-stubs && \
+    pip install pyspark==2.4.5 && \
+    pip install pyspark-stubs==2.4.0 && \
     pip install pylint && \
     pip install ipykernel && \
     pip install autopep8 && \
     pip install kafka-utils && \
-    pip install kafka-python
+    pip install kafka-python && \
+    pip install pymongo
 
 RUN ln -s /bin/python3 /bin/python
 
