@@ -13,7 +13,6 @@ def get_logger(ar_log_path, ar_file_name="Unknow", ar_log_level=10):
 
 
     logName = os.path.join(ar_log_path, "{}_{}.log".format(ar_file_name,datetime.now().strftime("%Y%m%d%H%M%S")))
-    logger = None
     try:
 
         logger = logging.getLogger(ar_file_name)

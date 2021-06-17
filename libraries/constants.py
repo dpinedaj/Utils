@@ -26,8 +26,7 @@ class Constants:
 
     @property
     def NODATA(self):
-
-        return self.__SINDATOS
+        return self.__NODATA
 
     @property
     def FAIL(self):
