@@ -1,3 +1,6 @@
 docker pull cloudera/quickstart:latest
 
 docker run --hostname=quickstart.cloudera --privileged=true -t -i -p 8888:8888 -p 80:80 cloudera/quickstart /usr/bin/docker-quickstart
+
+browser localhost
+browser localhost:8888 user: cloudera, pwd: cloudera
