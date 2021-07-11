@@ -16,8 +16,10 @@ RUN \
 RUN ln -s /usr/bin/pip3 /usr/bin/pip
 
 # Install PySpark and Numpy
+# TODO Freeze versions
 RUN \
     pip install --upgrade pip && \
+    pip install "ipython==7.1.1" && \
     pip install jupyterlab && \
     pip install numpy && \
     pip install pyspark && \
