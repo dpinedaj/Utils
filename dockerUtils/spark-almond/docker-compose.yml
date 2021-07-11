@@ -1,0 +1,12 @@
+version: "3.0"
+services:
+    spark-runtime:
+        build: .
+        image: spark-almond
+        container_name: spark-daniel
+        volumes:
+            - .:/data
+        ports:
+            - 4048:4040
+            - 60000:20000
+        command: /bin/sh -c "jupyter lab --ip='0.0.0.0' --port=20000 --NotebookApp.token='' --no-browser --allow-root"
