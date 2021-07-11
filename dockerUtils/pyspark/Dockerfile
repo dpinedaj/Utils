@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 # Install OpenJDK 11 --->Can use 8
 RUN \
@@ -13,7 +13,7 @@ RUN \
     rm -rf /var/lib/apt/lists/*
 
 #Simbolic link for pip
-RUN ln -s /bin/pip3 /bin/pip
+RUN ln -s /usr/bin/pip3 /usr/bin/pip
 
 # Install PySpark and Numpy
 RUN \
@@ -26,9 +26,13 @@ RUN \
     pip install ipykernel && \
     pip install autopep8 && \
     pip install kafka-utils && \
-    pip install kafka-python
+    pip install kafka-python && \
+    pip install jupyter-tabnine && \
+    jupyter nbextension install --py jupyter_tabnine && \
+    jupyter nbextension enable --py jupyter_tabnine && \
+    jupyter serverextension enable --py jupyter_tabnine
 
-RUN ln -s /bin/python3 /bin/python
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 # Define working directory
 WORKDIR /data
