@@ -1,8 +1,7 @@
 version: "3.0"
 services:
     spark-runtime:
-        build: .
-        image: pyspark
+        image: dpinedaj/pyspark:1.0
         container_name: pyspark-daniel
         volumes:
             - .:/data
